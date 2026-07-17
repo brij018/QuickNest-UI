@@ -1,0 +1,28 @@
+import axiosClient from "./axiosClient";
+
+export const adminApi = {
+  getDashboard: () => axiosClient.get("/admin/dashboard"),
+  getAllUsers: () => axiosClient.get("/admin/getAllUsers"),
+  getUserById: (id) => axiosClient.get(`/admin/getUser/${id}`),
+  updateUser: (id, data) => axiosClient.put(`/admin/updateUser/${id}`, data),
+  deleteUser: (id) => axiosClient.delete(`/admin/deleteUser/${id}`),
+  getAllProviders: () => axiosClient.get("/admin/getAllProviders"),
+  getProviderById: (id) => axiosClient.get(`/admin/getProvider/${id}`),
+  verifyProvider: (id) => axiosClient.put(`/admin/verifyProvider/${id}`),
+  rejectProvider: (id) => axiosClient.put(`/admin/rejectProvider/${id}`),
+  getAllCategories: () => axiosClient.get("/admin/getAllCategories"),
+  createCategory: (data) => axiosClient.post("/admin/createCategory", data),
+  updateCategory: (id, data) => axiosClient.put(`/admin/updateCategory/${id}`, data),
+  deleteCategory: (id) => axiosClient.delete(`/admin/deleteCategory/${id}`),
+  getAllServices: () => axiosClient.get("/admin/getAllServices"),
+  getServiceById: (id) => axiosClient.get(`/admin/getService/${id}`),
+  createService: (data) => axiosClient.post("/admin/createService", data),
+  updateService: (id, data) => axiosClient.put(`/admin/updateService/${id}`, data),
+  deleteService: (id) => axiosClient.delete(`/admin/deleteService/${id}`),
+  getAllBookings: () => axiosClient.get("/admin/getAllBookings"),
+  getBookingById: (id) => axiosClient.get(`/admin/getBooking/${id}`),
+  getAllReviews: () => axiosClient.get("/admin/getAllReviews"),
+  getNotifications: () => axiosClient.get("/admin/notifications"),
+  getSettings: () => axiosClient.get("/admin/settings"),
+  updateSettings: (data) => axiosClient.put("/admin/settings", data),
+};
